@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Марина Бабешина — Психолог</title>
+  <!-- Подключение шрифтов от Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond  :ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --beige: #F5F0E6;
+      --blue-light: #A8DADC;
+      --blue-dark: #457B9D;
+      --blue-bg-btn: #ECDACD;
+      --text-dark: #2B2D42;
+      --shadow: 0 4px 12px rgba(0,0,0,0.05);
+      --accent: #333624;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--beige);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-family: 'Lora', serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: #776F54;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Шапка */
+    header {
+      background: #809671;
+      padding: 20px 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      width: 150px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin-left: 12px;
+    }
+
+    nav li {
+      margin-left: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e1e1d1;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    .header-phone {
+      color: #e1e1d1;
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-right: 20px;
+    }
+
+    /* ОБНОВЛЁННЫЙ ГЛАВНЫЙ БЛОК */
+    .hero {
+      display: flex;
+      align-items: stretch;
+      min-height: 900px;
+      background: #F5ECE6;
+      padding: 40px 20px;
+      margin-top: 0;
+      position: relative;
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      flex: 1;
+      padding: 80px 40px 80px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #F5ECE6;
+      border-radius: 12px 0 0 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('bg-pattern.png') repeat;
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    .hero-title-line {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #776F54;
+      margin-bottom: 12px;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 1px;
+    }
+
+    .hero-name {
+      font-size: 4.2rem;
+      font-weight: 700;
+      color: #776F54;
+      margin-bottom: 24px;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 2.4rem;
+      color: #776F54;
+      margin-bottom: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      line-height: 1.3;
+      white-space: pre-wrap;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-right {
+      flex: 0 0 50%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 20%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Остальной контент */
+    main {
+      margin-top: 0;
+      background: #F5ECE6;
+    }
+
+    /* О себе — ВТОРОЙ БЛОК */
+    .about {
+      padding: 60px 0;
+      background: #F5ECE6;
+      box-shadow: var(--shadow);
+      margin: 0;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .about-header h2 {
+      font-size: 3.2rem;
+      color: #59533F;
+      position: relative;
+      display: inline-block;
+      font-weight: 700;
+      line-height: 1.3;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      letter-spacing: 0.5px;
+    }
+
+    .about-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .about-content {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .about-image {
+      flex: 0 0 320px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .about-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: #59533F;
+    }
+
+    /* Статистика */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin: 35px 0;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.4rem;
+      font-weight: 700;
+      color: #868465;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .stat-label {
+      font-family: 'Lora', serif;
+      font-size: 0.95rem;
+      color: #59533F;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Формат работы и стоимость */
+    .pricing {
+      padding: 60px 0;
+      background: #F5ECE6;
+      box-shadow: var(--shadow);
+      margin: 0;
+      color: #59533F;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .pricing-header h2 {
+      font-size: 2.4rem;
+      color:  #80744C;
+      position: relative;
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .pricing-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .pricing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pricing-item {
+      background: #B3B792;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .pricing-title {
+      padding: 20px 24px;
+      font-size: 1.4rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: #80744C;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .pricing-title::after {
+      content: "❯";
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: #e1e1d1;
+      transition: transform 0.3s;
+    }
+
+    .pricing-item.active .pricing-title::after {
+      transform: rotate(90deg);
+    }
+
+    .pricing-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: #B3B792;
+    }
+
+    .pricing-item.active .pricing-content {
+      max-height: 500px;
+      padding: 0 24px 24px;
+    }
+
+    .pricing-content p {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #80744C;
+    }
+
+    .price-tag {
+      font-weight: bold;
+      color: #80744C;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+
+    /* Цитата */
+    .quote-banner {
+      padding: 60px 0;
+      background: #B3B792;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #80744C;
+      min-height: 300px;
+      position: relative;
+    }
+
+    .quote-text {
+      max-width: 900px;
+      padding: 0 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.8rem;
+      line-height: 1.5;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Дипломы */
+    .certificates-section {
+      padding: 60px 0;
+      background: #F5ECE6;
+      box-shadow: var(--shadow);
+      margin: 0;
+    }
+
+    .certificates-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .certificates-header h2 {
+      font-size: 2.2rem;
+      color: #59533f;
+      position: relative;
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .certificates-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .certificates {
+      margin-top: 20px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cert-grid {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      transition: transform 0.5s ease;
+      transform: translateX(0);
+    }
+
+    .cert-item {
+      width: 280px;
+      height: 360px;
+      background: var(--blue-bg-btn);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+      cursor: pointer;
+    }
+
+    .cert-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .cert-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .cert-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 16px;
+    }
+
+    .cert-nav button {
+      background: var(--accent);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: white;
+      font-family: 'Cormorant Garamond', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .cert-nav button:hover {
+      background: #2a2e18;
+    }
+
+    /* Мой подход */
+    .approach {
+      padding: 60px 0;
+      background: #F5ECE6;
+      margin: 0;
+    }
+
+    .approach-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .approach-header h2 {
+      font-size: 2.2rem;
+      color: #59533f;
+      position: relative;
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-style: italic;
+      padding: 12px 24px;
+      background-color: #ECDACD; /* ← заменён фон */
+      border-radius: 24px;
+    }
+
+    .approach-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .approach-content {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .approach-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .approach-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .approach-text {
+      flex: 1;
+    }
+
+    .approach-text h3 {
+      margin-bottom: 15px;
+      color: #59533f;
+    }
+
+    .approach-text ol {
+      padding-left: 20px;
+    }
+
+    .approach-text li {
+      margin-bottom: 12px;
+      color: #59533f;
+    }
+
+    .approach-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #47402A;
+      margin-top: 16px;
+    }
+
+    /* Отзывы клиентов — ОБНОВЛЕННЫЙ БЛОК */
+    .testimonials {
+      padding: 60px 0;
+      background: #F5ECE6;
+      box-shadow: var(--shadow);
+      margin: 0;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .testimonials-header h2 {
+      font-size: 2.2rem;
+      color: #59533f;
+      position: relative;
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .testimonials-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .testimonial-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .testimonial-slider {
+      display: flex;
+      overflow: hidden;
+      width: calc(300px * 4 + 20px * 3);
+      max-width: 100%;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      transition: transform 0.5s ease;
+      transform: translateX(0);
+    }
+
+    .testimonial-item {
+      width: 300px;
+      height: 380px;
+      background: var(--blue-bg-btn);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+      cursor: pointer;
+    }
+
+    .testimonial-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .testimonial-nav button {
+      background: var(--accent);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: white;
+      font-family: 'Cormorant Garamond', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .testimonial-nav button:hover {
+      background: #2a2e18;
+    }
+
+    /* Частые вопросы — НЕ ТРОГАЕМ */
+    .faq {
+      padding: 60px 0;
+      background: #E8D1C1; /* остаётся как есть */
+      box-shadow: var(--shadow);
+      margin: 0;
+      border-radius: 12px 12px 0 0;
+      color: #80744C;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .faq-header h2 {
+      font-size: 2.2rem;
+      color: #80744C;
+      position: relative;
+      display: inline-block;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .faq-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #80744C;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: rgba(128, 116, 76, 0.15);
+      border: 1px solid rgba(128, 116, 76, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background: rgba(128, 116, 76, 0.25);
+    }
+
+    .faq-title {
+      padding: 20px 24px;
+      font-size: 1.3rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: #80744C;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-title::after {
+      content: "❯";
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: #80744C;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-title::after {
+      transform: rotate(90deg);
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: rgba(128, 116, 76, 0.1);
+      color: #80744C;
+    }
+
+    .faq-item.active .faq-content {
+      max-height: 500px;
+      padding: 0 24px 24px;
+    }
+
+    .faq-content p {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #80744C;
+    }
+
+    /* Модальное окно */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .modal-content img {
+      display: block;
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+
+    /* Футер */
+    footer {
+      background: #809671;
+      color: white;
+      text-align: center;
+      padding: 60px 0 30px;
+      margin-top: 0;
+      font-family: 'Lora', serif;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .footer-contact {
+      margin: 8px 0;
+      color: #e1e1d1;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+      display: block;
+    }
+
+    .footer-contact:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .footer-copyright {
+      margin-top: 24px;
+      font-size: 0.95rem;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      header {
+        position: relative;
+        background: #80744C;
+        backdrop-filter: blur(5px);
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .header-content {
+        margin-bottom: 10px;
+      }
+
+      .header-phone {
+        margin: 0 20px 0 0;
+      }
+
+      nav a {
+        color: #e1e1d1;
+        font-size: 1rem;
+      }
+
+      nav ul {
+        margin-left: 8px;
+      }
+
+      nav li {
+        margin-left: 12px;
+      }
+
+      .hero {
+        flex-direction: column;
+        min-height: auto;
+        padding: 20px;
+        background: #F5ECE6;
+      }
+
+      .hero-left {
+        border-radius: 12px;
+        padding: 40px 20px;
+        background: #F5ECE6;
+      }
+
+      .hero-title-line { font-size: 1.8rem; color: #47402A; }
+      .hero-name { font-size: 3.0rem; color: #47402A; }
+      .hero-subtitle { font-size: 2.0rem; color: #47402A; white-space: normal; }
+
+      .about-header h2,
+      .pricing-header h2,
+      .certificates-header h2,
+      .approach-header h2,
+      .testimonials-header h2,
+      .faq-header h2 {
+        font-size: 2.6rem;
+        color: #47402A;
+      }
+
+      .faq-header h2 {
+        color: #80744C;
+      }
+
+      .quote-text {
+        font-size: 1.4rem;
+      }
+
+      .stat-number {
+        font-size: 3.6rem;
+      }
+
+      .about-image {
+        flex: none;
+        margin: 0 auto 20px;
+        width: 280px;
+      }
+
+      .testimonial-slider {
+        width: calc(280px * 2 + 20px);
+      }
+
+      .testimonial-item {
+        width: 280px;
+        height: 360px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title-line { font-size: 1.6rem; }
+      .hero-name { font-size: 2.4rem; }
+      .hero-subtitle { font-size: 1.8rem; }
+      .hero-right { height: 250px; }
+      .pricing-title, .faq-title { font-size: 1.2rem; }
+      .quote-text { font-size: 1.2rem; padding: 0 15px; }
+      .cert-item, .testimonial-item { 
+        width: 260px; 
+        height: 340px; 
+        padding: 8px;
+      }
+      .testimonial-slider {
+        width: calc(260px * 2 + 20px);
+      }
+      .testimonial-item img {
+        padding: 6px;
+      }
+      .footer-title { font-size: 1.5rem; }
+      .footer-contact { font-size: 1rem; }
+    }
+
+    /* Розовый блок в первом блоке — заменён на #ECDACD */
+    .hero-left-inner-frame {
+      padding: 60px;
+      background-color: #ECDACD; /* ← заменён */
+      border-radius: 24px;
+      display: inline-block;
+      margin-bottom: 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .hero-left-inner-frame .hero-title-line,
+    .hero-left-inner-frame .hero-name,
+    .hero-left-inner-frame .hero-subtitle {
+      color: #47402A !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="logo"></div>
+      <nav>
+        <ul>
+          <li><a href="#about">О себе</a></li>
+          <li><a href="#pricing">Формат и стоимость</a></li>
+          <li><a href="#quote">Цитата</a></li>
+          <li><a href="#certificates">Дипломы</a></li>
+          <li><a href="#approach">Подход</a></li>
+          <li><a href="#testimonials">Отзывы</a></li>
+          <li><a href="#faq">Вопросы</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-phone">+7 (905) 588-10-09</div>
+  </header>
+
+  <!-- ОБНОВЛЁННЫЙ ПЕРВЫЙ БЛОК -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-left-inner-frame">
+        <div class="hero-title-line">ПСИХОЛОГ</div>
+        <h1 class="hero-name">МАРИНА БАБЕШИНА</h1>
+        <h3 class="hero-subtitle">для меня важно,<br>что бы каждый здесь нашел<br>свое счастье.</h3>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img src="image.jpg" alt="Марина Бабешина" class="hero-image">
+    </div>
+  </section>
+
+  <main>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-header">
+          <h2>ДАВАЙТЕ ПОЗНАКОМИМСЯ.</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-image">
+            <img src="image2.jpg" alt="Марина Бабешина в кабинете">
+          </div>
+          <div class="about-text">
+            <p>заслуженный мастер спорта по волейболу, серебряный призер Олимпийских игр в Афинах, чемпионка Мира в Японии, более 20 лет спортивной практики.</p>
+            <p>Женщина, Жена, Мама — все возможно совместить.</p>
+
+            <div class="stats">
+              <div class="stat-item">
+                <div class="stat-number">2000+</div>
+                <div class="stat-label">часов психологической практики</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">лет спортивной практики</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">16+</div>
+                <div class="stat-label">лет практики семейных отношений</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="pricing-header">
+          <h2>ФОРМАТ РАБОТЫ И СТОИМОСТЬ</h2>
+        </div>
+        <div class="pricing-grid">
+          <div class="pricing-item">
+            <div class="pricing-title">Индивидуальная консультация (онлайн / очно)</div>
+            <div class="pricing-content">
+              <p>Про глубокие внутренние трансформации, помогающие решить важные вопросы в жизни человека в индивидуальном подходе. В сессии применяются различные методы и техники, в зависимости от ситуации, состояния и запроса клиента.</p>
+              <p class="price-tag">Стоимость: 5 000 ₽ / 90 мин</p>
+            </div>
+          </div>
+          <div class="pricing-item">
+            <div class="pricing-title">Курс терапии (10 встреч)</div>
+            <div class="pricing-content">
+              <p>Глубокая работа над вашими запросами (самооценки, внутренней опоры, тревожности, самореализации, отношений, идентичности…) благодаря комплексному подходу , на уровне бессознательного, клеточной памяти , разных сценариев жизни и судьбологических сценариев. Для реализации ВАШЕГО потенциала.</p>
+              <p class="price-tag">Стоимость: 40 000 ₽ /пакет</p>
+            </div>
+          </div>
+          <div class="pricing-item">
+            <div class="pricing-title">Групповая терапия</div>
+            <div class="pricing-content">
+              <p>работа в группах позволяет переписывать множество травм, как трангенерационных, так и персональных. Объем энергии в разы больше. Возможность получения нового адекватного взаимодействия. Так и личностного роста. Что приводит к улучшению качества жизни.</p>
+              <p class="price-tag">От 15 000 ₽ / мероприятие</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-banner" id="quote">
+      <div class="quote-text">
+        Самодостаточность, зрелая идентичность, ответственность, мотивация, естественность, проявленность — ЖИЗНЬ.<br>
+        Все это из состояния: хочу, могу, буду.
+      </div>
+    </section>
+
+    <section class="certificates-section" id="certificates">
+      <div class="container">
+        <div class="certificates-header">
+          <h2>ДИПЛОМЫ И СЕРТИФИКАТЫ</h2>
+        </div>
+        <div class="certificates">
+          <div class="cert-grid" id="certGrid">
+            <div class="cert-item"><img src="cert1.jpg" alt="Диплом 1"></div>
+            <div class="cert-item"><img src="cert2.jpg" alt="Диплом 2"></div>
+            <div class="cert-item"><img src="cert3.jpg" alt="Диплом 3"></div>
+            <div class="cert-item"><img src="cert4.jpg" alt="Диплом 4"></div>
+            <div class="cert-item"><img src="cert5.jpg" alt="Диплом 5"></div>
+            <div class="cert-item"><img src="cert6.jpg" alt="Диплом 6"></div>
+            <div class="cert-item"><img src="cert7.jpg" alt="Диплом 7"></div>
+            <div class="cert-item"><img src="cert8.jpg" alt="Диплом 8"></div>
+            <div class="cert-item"><img src="cert9.jpg" alt="Диплом 9"></div>
+            <div class="cert-item"><img src="cert10.jpg" alt="Диплом 10"></div>
+            <div class="cert-item"><img src="cert11.jpg" alt="Диплом 11"></div>
+          </div>
+          <div class="cert-nav">
+            <button id="prevBtn">❮</button>
+            <button id="nextBtn">❯</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="container">
+        <div class="approach-header">
+          <h2>МОЙ ПОДХОД К РАБОТЕ</h2>
+        </div>
+        <div class="approach-content">
+          <div class="approach-image">
+            <img src="image4.jpg" alt="Марина Бабешина за работой">
+          </div>
+          <div class="approach-text">
+            <h3>Как я работаю:</h3>
+            <ol>
+              <li><strong>Моя работа заключается в бережном сопровождении клиента к его истинной сути или к тому запросу, который озвучен. Я использую разные методики, для того, что бы увидеть сценарии, травмы, деструктивные программы  и максимально эффективно их решить или исцелить, трансформировать. Для того что бы жить, жить свою жизнь, счастливую. Делать, развиваться и адекватно взаимодействовать с людьми и с миром.</li>
+            </ol>
+            <p>Я создаю безопасное пространство, где вы можете говорить о своих переживаниях без страха осуждения. Моя задача — помочь вам найти внутренние ресурсы для изменений.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОБНОВЛЕННЫЙ БЛОК ОТЗЫВОВ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="testimonials-header">
+          <h2>ЧТО ГОВОРЯТ МОИ КЛИЕНТЫ?</h2>
+        </div>
+        <div class="testimonial-container">
+          <div class="testimonial-slider">
+            <div class="testimonial-grid" id="testimonialGrid">
+              <div class="testimonial-item"><img src="review1.jpg" alt="Отзыв 1"></div>
+              <div class="testimonial-item"><img src="review2.jpg" alt="Отзыв 2"></div>
+              <div class="testimonial-item"><img src="review3.jpg" alt="Отзыв 3"></div>
+              <div class="testimonial-item"><img src="review4.jpg" alt="Отзыв 4"></div>
+              <div class="testimonial-item"><img src="review5.jpg" alt="Отзыв 5"></div>
+              <div class="testimonial-item"><img src="review6.jpg" alt="Отзыв 6"></div>
+              <div class="testimonial-item"><img src="review7.jpg" alt="Отзыв 7"></div>
+              <div class="testimonial-item"><img src="review8.jpg" alt="Отзыв 8"></div>
+              <div class="testimonial-item"><img src="review9.jpg" alt="Отзыв 9"></div>
+              <div class="testimonial-item"><img src="review10.jpg" alt="Отзыв 10"></div>
+              <div class="testimonial-item"><img src="review11.jpg" alt="Отзыв 11"></div>
+              <div class="testimonial-item"><img src="review12.jpg" alt="Отзыв 12"></div>
+              <div class="testimonial-item"><img src="review13.jpg" alt="Отзыв 13"></div>
+              <div class="testimonial-item"><img src="review14.jpg" alt="Отзыв 14"></div>
+              <div class="testimonial-item"><img src="review15.jpg" alt="Отзыв 15"></div>
+              <div class="testimonial-item"><img src="review16.jpg" alt="Отзыв 16"></div>
+              <div class="testimonial-item"><img src="review17.jpg" alt="Отзыв 17"></div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-nav">
+          <button id="prevTestimonial">❮</button>
+          <button id="nextTestimonial">❯</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="faq-header">
+          <h2>ОТВЕТЫ НА ЧАСТЫЕ ВОПРОСЫ</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-title">Сколько длится одна консультация?</div>
+            <div class="faq-content">
+              <p>Стандартная сессия длится от 60 до 90 минут</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-title">Можно ли записаться на онлайн-консультацию?</div>
+            <div class="faq-content">
+              <p>Да, конечно. Встречи проходят в ZOOM, я присылаю ссылку за 20-30 минут до встречи. В наше время очень удобно и комфортно работать в онлайн формате. Качество работы при этом эффективное.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-title">Сколько сессий нужно для результата?</div>
+            <div class="faq-content">
+              <p>Это индивидуально. Иногда достаточно 1–2 встреч, чтобы разобрать ситуацию. Для глубокой работы рекомендую курс из 10 сессий.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-title">Как понять, что мне нужна помощь психолога?</div>
+            <div class="faq-content">
+              <p>Тогда, когда вы об этом задумались. )) помощь психолога уместна не только в кризисных ситуациях, но и как профилактика. Что бы лучше понимать себя, возможно даже свой бизнес и не тратить время на лишнее.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Модальное окно -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-title">КОНТАКТЫ</div>
+      <a href="https://t.me/MariBabeshina  " target="_blank" class="footer-contact">@MariBabeshina</a>
+      <a href="tel:+79055881009" class="footer-contact">+7 (905) 588-10-09</a>
+      <p class="footer-copyright">&copy; 2026 Марина Бабешина — Практикующий психолог. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Раскрытие цен и FAQ
+    document.querySelectorAll('.pricing-item, .faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+
+    // Прокрутка дипломов
+    const certGrid = document.getElementById('certGrid');
+    const prevCert = document.getElementById('prevBtn');
+    const nextCert = document.getElementById('nextBtn');
+    let certIndex = 0;
+    const certItems = Array.from(certGrid.children);
+    const totalCert = certItems.length;
+    const visibleCert = 4;
+
+    function updateCertPosition() {
+      if (certItems[0]) {
+        const offset = -certIndex * (certItems[0].offsetWidth + 20);
+        certGrid.style.transform = `translateX(${offset}px)`;
+      }
+    }
+
+    nextCert.addEventListener('click', () => {
+      if (certIndex < totalCert - visibleCert) {
+        certIndex++;
+        updateCertPosition();
+      }
+    });
+
+    prevCert.addEventListener('click', () => {
+      if (certIndex > 0) {
+        certIndex--;
+        updateCertPosition();
+      }
+    });
+
+    // Прокрутка отзывов
+    const testimonialGrid = document.getElementById('testimonialGrid');
+    const prevTest = document.getElementById('prevTestimonial');
+    const nextTest = document.getElementById('nextTestimonial');
+    let testIndex = 0;
+    const testItems = Array.from(testimonialGrid.children);
+    const totalTest = testItems.length;
+    const visibleTest = 4;
+
+    function updateTestPosition() {
+      if (testItems[0]) {
+        const offset = -testIndex * (testItems[0].offsetWidth + 20);
+        testimonialGrid.style.transform = `translateX(${offset}px)`;
+      }
+    }
+
+    nextTest.addEventListener('click', () => {
+      if (testIndex < totalTest - visibleTest) {
+        testIndex++;
+        updateTestPosition();
+      }
+    });
+
+    prevTest.addEventListener('click', () => {
+      if (testIndex > 0) {
+        testIndex--;
+        updateTestPosition();
+      }
+    });
+
+    // Модальное окно
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.modal-close');
+
+    document.querySelectorAll('.cert-item img, .testimonial-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.src;
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
