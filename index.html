@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Марина Бабешина — Психолог</title>
   <!-- Подключение шрифтов от Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond  :ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --beige: #F5F0E6;
@@ -240,6 +240,7 @@
 
     .about-image img {
       width: 100%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
@@ -545,7 +546,7 @@
       font-weight: 700;
       font-style: italic;
       padding: 12px 24px;
-      background-color: #ECDACD; /* ← заменён фон */
+      background-color: #ECDACD;
       border-radius: 24px;
     }
 
@@ -573,6 +574,7 @@
 
     .approach-image img {
       max-width: 100%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
@@ -604,7 +606,7 @@
       margin-top: 16px;
     }
 
-    /* Отзывы клиентов — ОБНОВЛЕННЫЙ БЛОК */
+    /* Отзывы клиентов */
     .testimonials {
       padding: 60px 0;
       background: #F5ECE6;
@@ -713,10 +715,10 @@
       background: #2a2e18;
     }
 
-    /* Частые вопросы — НЕ ТРОГАЕМ */
+    /* Частые вопросы */
     .faq {
       padding: 60px 0;
-      background: #E8D1C1; /* остаётся как есть */
+      background: #E8D1C1;
       box-shadow: var(--shadow);
       margin: 0;
       border-radius: 12px 12px 0 0;
@@ -838,6 +840,7 @@
       display: block;
       max-width: 100%;
       max-height: 90vh;
+      height: auto;
       object-fit: contain;
     }
 
@@ -892,53 +895,84 @@
       font-size: 0.95rem;
     }
 
-    /* Адаптивность */
+    /* Адаптивность — только изменения порядка и размеров */
     @media (max-width: 768px) {
       header {
         position: relative;
-        background: #80744C;
-        backdrop-filter: blur(5px);
+        padding: 16px 0;
         flex-direction: column;
-        padding: 15px 0;
+        align-items: flex-start;
       }
 
       .header-content {
+        width: 100%;
+        justify-content: space-between;
         margin-bottom: 10px;
       }
 
       .header-phone {
-        margin: 0 20px 0 0;
-      }
-
-      nav a {
-        color: #e1e1d1;
-        font-size: 1rem;
+        margin-right: 0;
       }
 
       nav ul {
-        margin-left: 8px;
+        margin-left: 0;
+        gap: 12px;
+        flex-wrap: wrap;
       }
 
       nav li {
-        margin-left: 12px;
+        margin-left: 0;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 6px 10px;
       }
 
       .hero {
         flex-direction: column;
         min-height: auto;
-        padding: 20px;
-        background: #F5ECE6;
+        padding: 24px 16px;
       }
 
       .hero-left {
+        padding: 32px 16px;
         border-radius: 12px;
-        padding: 40px 20px;
-        background: #F5ECE6;
       }
 
-      .hero-title-line { font-size: 1.8rem; color: #47402A; }
-      .hero-name { font-size: 3.0rem; color: #47402A; }
-      .hero-subtitle { font-size: 2.0rem; color: #47402A; white-space: normal; }
+      .hero-right {
+        order: 2;
+        width: 100%;
+        height: 300px;
+        margin-top: 20px;
+        border-radius: 12px;
+      }
+
+      .hero-title-line { font-size: 1.8rem; }
+      .hero-name { font-size: 2.8rem; }
+      .hero-subtitle { font-size: 2.0rem; white-space: normal; }
+
+      /* О себе — текст перед фото */
+      .about-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .about-text,
+      .about-image {
+        max-width: 100%;
+        flex: none;
+      }
+
+      .about-image {
+        order: 2;
+        margin-top: 20px;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+      }
 
       .about-header h2,
       .pricing-header h2,
@@ -946,36 +980,69 @@
       .approach-header h2,
       .testimonials-header h2,
       .faq-header h2 {
-        font-size: 2.6rem;
-        color: #47402A;
+        font-size: 2.4rem;
       }
 
-      .faq-header h2 {
-        color: #80744C;
+      .stat-number { font-size: 3.4rem; }
+
+      /* Мой подход — текст перед фото */
+      .approach-content {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .approach-text,
+      .approach-image {
+        max-width: 100%;
+        flex: none;
+      }
+
+      .approach-image {
+        order: 2;
+        margin-top: 24px;
+        text-align: center;
+      }
+
+      .approach-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Отзывы — оставляем как есть, но фиксируем размеры */
+      .testimonial-slider {
+        width: 100%;
+      }
+
+      .testimonial-grid {
+        padding: 0 16px;
+      }
+
+      .testimonial-item {
+        width: 260px;
+        height: 340px;
+      }
+
+      .cert-item {
+        width: 260px;
+        height: 340px;
+      }
+
+      .cert-grid {
+        padding: 0 16px;
+      }
+
+      .pricing-title,
+      .faq-title {
+        font-size: 1.25rem;
       }
 
       .quote-text {
         font-size: 1.4rem;
+        padding: 0 16px;
       }
 
-      .stat-number {
-        font-size: 3.6rem;
-      }
-
-      .about-image {
-        flex: none;
-        margin: 0 auto 20px;
-        width: 280px;
-      }
-
-      .testimonial-slider {
-        width: calc(280px * 2 + 20px);
-      }
-
-      .testimonial-item {
-        width: 280px;
-        height: 360px;
-      }
+      .footer-title { font-size: 1.6rem; }
+      .footer-contact { font-size: 1.05rem; }
     }
 
     @media (max-width: 480px) {
@@ -986,24 +1053,20 @@
       .pricing-title, .faq-title { font-size: 1.2rem; }
       .quote-text { font-size: 1.2rem; padding: 0 15px; }
       .cert-item, .testimonial-item { 
-        width: 260px; 
-        height: 340px; 
+        width: 240px; 
+        height: 320px; 
         padding: 8px;
       }
-      .testimonial-slider {
-        width: calc(260px * 2 + 20px);
-      }
-      .testimonial-item img {
+      .testimonial-item img,
+      .cert-item img {
         padding: 6px;
       }
-      .footer-title { font-size: 1.5rem; }
-      .footer-contact { font-size: 1rem; }
     }
 
-    /* Розовый блок в первом блоке — заменён на #ECDACD */
+    /* Рамка в первом блоке */
     .hero-left-inner-frame {
       padding: 60px;
-      background-color: #ECDACD; /* ← заменён */
+      background-color: #ECDACD;
       border-radius: 24px;
       display: inline-block;
       margin-bottom: 30px;
@@ -1038,7 +1101,6 @@
     <div class="header-phone">+7 (905) 588-10-09</div>
   </header>
 
-  <!-- ОБНОВЛЁННЫЙ ПЕРВЫЙ БЛОК -->
   <section class="hero">
     <div class="hero-left">
       <div class="hero-left-inner-frame">
@@ -1047,7 +1109,6 @@
         <h3 class="hero-subtitle">для меня важно,<br>чтобы каждый здесь нашел<br>свое счастье.</h3>
       </div>
     </div>
-
     <div class="hero-right">
       <img src="image.jpg" alt="Марина Бабешина" class="hero-image">
     </div>
@@ -1060,13 +1121,9 @@
           <h2>ДАВАЙТЕ ПОЗНАКОМИМСЯ.</h2>
         </div>
         <div class="about-content">
-          <div class="about-image">
-            <img src="image2.jpg" alt="Марина Бабешина в кабинете">
-          </div>
           <div class="about-text">
             <p>заслуженный мастер спорта по волейболу, серебряный призер Олимпийских игр в Афинах, чемпионка Мира в Японии, более 20 лет спортивной практики.</p>
             <p>Женщина, Жена, Мама — все возможно совместить.</p>
-
             <div class="stats">
               <div class="stat-item">
                 <div class="stat-number">2000+</div>
@@ -1081,6 +1138,9 @@
                 <div class="stat-label">лет практики семейных отношений</div>
               </div>
             </div>
+          </div>
+          <div class="about-image">
+            <img src="image2.jpg" alt="Марина Бабешина в кабинете">
           </div>
         </div>
       </div>
@@ -1157,9 +1217,6 @@
           <h2>МОЙ ПОДХОД К РАБОТЕ</h2>
         </div>
         <div class="approach-content">
-          <div class="approach-image">
-            <img src="image4.jpg" alt="Марина Бабешина за работой">
-          </div>
           <div class="approach-text">
             <h3>Как я работаю:</h3>
             <ol>
@@ -1167,11 +1224,13 @@
             </ol>
             <p>Я создаю безопасное пространство, где вы можете говорить о своих переживаниях без страха осуждения. Моя задача — помочь вам найти внутренние ресурсы для изменений.</p>
           </div>
+          <div class="approach-image">
+            <img src="image4.jpg" alt="Марина Бабешина за работой">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ОБНОВЛЕННЫЙ БЛОК ОТЗЫВОВ -->
     <section class="testimonials" id="testimonials">
       <div class="container">
         <div class="testimonials-header">
@@ -1242,7 +1301,6 @@
     </section>
   </main>
 
-  <!-- Модальное окно -->
   <div class="modal" id="imageModal">
     <span class="modal-close">&times;</span>
     <div class="modal-content">
@@ -1253,21 +1311,19 @@
   <footer>
     <div class="footer-content">
       <div class="footer-title">КОНТАКТЫ</div>
-      <a href="https://t.me/MariBabeshina  " target="_blank" class="footer-contact">@MariBabeshina</a>
+      <a href="https://t.me/MariBabeshina" target="_blank" class="footer-contact">@MariBabeshina</a>
       <a href="tel:+79055881009" class="footer-contact">+7 (905) 588-10-09</a>
       <p class="footer-copyright">&copy; 2026 Марина Бабешина — Практикующий психолог. Все права защищены.</p>
     </div>
   </footer>
 
   <script>
-    // Раскрытие цен и FAQ
     document.querySelectorAll('.pricing-item, .faq-item').forEach(item => {
       item.addEventListener('click', () => {
         item.classList.toggle('active');
       });
     });
 
-    // Прокрутка дипломов
     const certGrid = document.getElementById('certGrid');
     const prevCert = document.getElementById('prevBtn');
     const nextCert = document.getElementById('nextBtn');
@@ -1297,7 +1353,6 @@
       }
     });
 
-    // Прокрутка отзывов
     const testimonialGrid = document.getElementById('testimonialGrid');
     const prevTest = document.getElementById('prevTestimonial');
     const nextTest = document.getElementById('nextTestimonial');
@@ -1327,7 +1382,6 @@
       }
     });
 
-    // Модальное окно
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeBtn = document.querySelector('.modal-close');
@@ -1350,5 +1404,4 @@
     });
   </script>
 </body>
-
 </html>
